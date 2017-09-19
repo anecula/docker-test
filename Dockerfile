@@ -2,8 +2,8 @@ FROM  httpd:2.4
 
 
 # Enable apache mods.
-RUN a2enmod php7.0
-RUN a2enmod rewrite
+#RUN a2enmod php7.0
+#RUN a2enmod rewrite
 RUN rm /var/www/html/*
 COPY  html/index/html  /var/www/index.html
 
