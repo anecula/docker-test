@@ -19,5 +19,5 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 EXPOSE 80
 
 # By default, simply start apache.
-RUN service apache2 start
-RUN service apache2 status
+#RUN service apache2 start
+#RUN service apache2 status
