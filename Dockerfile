@@ -1,17 +1,11 @@
-FROM debian:sid-slim
-MAINTAINER Andra Necula <andra.necula@eaudeweb.ro>
+FROM FROM httpd:2.4
 
-# Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
-RUN apt-get update \
-    && apt-get -y upgrade \
-    && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php7.0 php7.0-mysql libapache2-mod-php7.0 curl lynx-cur
 
 # Enable apache mods.
 RUN a2enmod php7.0
 RUN a2enmod rewrite
-#RUN rm -rf /var/www/html/
-#ADD html /var/www/
+RUN rm /var/www/html/*
+COPY  html/index/html  /var/www/index.html
 
 #ENTRYPOINT [""]
 
